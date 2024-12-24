@@ -750,7 +750,8 @@ def generateOutputFile(circuitOutputs, outputInfo, freqList, outputFile):
         valRow = [j.rjust(colWidth-1)] + valRow
         # print(valRow)
         vals.append(valRow.copy())
-
+    
+    
     # Create CSV file
     try:
         with open(outputFile, 'w+') as csvfile:  # Open CSV file with file name outputFile
@@ -766,6 +767,7 @@ def generateOutputFile(circuitOutputs, outputInfo, freqList, outputFile):
                 filewriter.writerow(i + [''])
     except:
         raise SystemExit("Error: Cannot create output file")
+
 
     return
 
@@ -832,9 +834,6 @@ def main(inputCSV, outputNet):
 
     generateOutputFile(circuitOutputs, outputStrings, freqList, outputFile)
 
-    if __name__ == '__main__':
-        import doctest
-        doctest.testmod()
 
     return
 
@@ -856,6 +855,7 @@ except getopt.GetoptError as err:  # If command line arguments are invalid, thro
 
 
 main(inputFile, outputFile)  # Call main function
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
+
+# if __name__ == '__main__':
+#     import doctest
+#     doctest.testmod()
